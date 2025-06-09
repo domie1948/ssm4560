@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LunwenchazhongDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LunwenchazhongEntity" id="lunwenchazhongMap">
+        <result property="wangzhanmingcheng" column="wangzhanmingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="wangzhi" column="wangzhi"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LunwenchazhongVO" >
+		SELECT * FROM lunwenchazhong  lunwenchazhong         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LunwenchazhongVO" >
+		SELECT  lunwenchazhong.* FROM lunwenchazhong  lunwenchazhong
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LunwenchazhongView" >
+
+		SELECT  lunwenchazhong.* FROM lunwenchazhong  lunwenchazhong 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LunwenchazhongView" >
+		SELECT * FROM lunwenchazhong  lunwenchazhong <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
